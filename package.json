@@ -1,0 +1,12 @@
+{
+  "name": "@borderlessjs/env-node",
+  "version": "0.0.1",
+  "description": "Borderless node environment",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "compile": "npx run @borderless/borderless-cli index.js"
+  },
+  "author": "Sergey Chernyshev",
+  "license": "ISC"
+}
