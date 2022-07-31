@@ -6,5 +6,7 @@ export default function (config) {
     boilerplate: fileURLToPath(new URL("boilerplate/", import.meta.url)),
     buildCommand: "npm run build",
     buildOutputFolder: "build/",
+    getDeployCommand: (config) =>
+      `echo "Deploying to ${config.host} using provider: '${config.provider}'"`,
   };
 }
