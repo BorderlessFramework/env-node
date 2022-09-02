@@ -5,5 +5,11 @@
   "main": "index.js",
   "type": "module",
   "author": "Sergey Chernyshev",
-  "license": "ISC"
+  "license": "ISC",
+  "scripts": {
+    "dev:link-local": "npm link @borderlessjs/borderless"
+  },
+  "dependencies": {
+    "@borderlessjs/borderless": "0.0.3-dev"
+  }
 }

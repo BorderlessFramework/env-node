@@ -1,12 +1,20 @@
 import { fileURLToPath } from "node:url";
 
-export default function (config) {
-  return {
-    src: "src/",
-    boilerplate: fileURLToPath(new URL("boilerplate/", import.meta.url)),
-    buildCommand: "npm run build",
-    buildOutputFolder: "build/",
-    getDeployCommand: (config) =>
-      `echo "Deploying to ${config.host} using provider: '${config.provider}'"`,
-  };
+import { BorderlessEnvironment } from "@borderlessjs/borderless";
+
+export default class NodeEnvironment extends BorderlessEnvironment {
+  constructor(name, config) {
+    super(
+      name,
+      config,
+      "src",
+      "build",
+      fileURLToPath(new URL("boilerplate/", import.meta.url)),
+      "npm run build"
+    );
+  }
+
+  getDeployCommand(deploymentConfig) {
+    `echo "Deploying to ${deploymentConfig.host} using provider: '${deploymentConfig.provider}'"`;
+  }
 }
